@@ -10,15 +10,12 @@ import UIKit
 
 class EpisodeCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var episodeImageView: UIImageView!
+    @IBOutlet weak var episodeNameLabel: UILabel!
+    @IBOutlet weak var seasonEpLabel: UILabel!
+    
+    func configueCell(for episode: GOTEpisode) {
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
