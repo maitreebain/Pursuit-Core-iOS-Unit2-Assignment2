@@ -16,6 +16,9 @@ class EpisodeCell: UITableViewCell {
     
     func configueCell(for episode: GOTEpisode) {
         
+        episodeImageView.image = UIImage(named: episode.mediumImageID)
+        episodeNameLabel.text = episode.name
+        seasonEpLabel.text = episode.season.description
     }
     
 }

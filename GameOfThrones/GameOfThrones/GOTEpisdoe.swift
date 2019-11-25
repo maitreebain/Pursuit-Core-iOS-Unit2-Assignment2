@@ -99,27 +99,35 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
     
-    func seasonSections() -> [[GOTEpisode]] {
-        
-        let sortedSeasons = GOTEpisode.allEpisodes.sorted { $0.season < $1.season }
-        
-        let completeSeasons = Set(sortedSeasons.map {$0.season})
-        
-        var sections = Array(repeating: [GOTEpisode](), count: completeSeasons.count)
-        
-        var currentIndex = 0
-        var currentSeason = sortedSeasons.first?.season ?? 0
-        
-        for seasonNum in sortedSeasons {
-            if seasonNum.season == currentSeason {
-                sections[currentIndex].append(seasonNum)
-            } else {
-                currentIndex += 1
-                sections[currentIndex].append(seasonNum)
-                currentSeason = seasonNum.season
-            }
+static func seasonSections() -> [[GOTEpisode]] {
+
+    let sortedSeasons = GOTEpisode.allEpisodes.sorted { $0.season < $1.season }
+
+    let completeSeasons = Set(sortedSeasons.map {$0.season})
+
+    var sections = Array(repeating: [GOTEpisode](), count: completeSeasons.count)
+
+    var currentIndex = 0
+    var currentSeason = sortedSeasons.first?.season ?? 0
+
+    for seasonNum in sortedSeasons {
+        if seasonNum.season == currentSeason {
+            sections[currentIndex].append(seasonNum)
+        } else {
+            currentIndex += 1
+            sections[currentIndex].append(seasonNum)
+            currentSeason = seasonNum.season
         }
-        
-        return sections
+    }
+    
+    return sections
 }
 }
+
+/*
+ let allEps = GOTEpisode.allEpisodes
+ 
+ //    for episode in allEps {
+ //        let oneEp = GOTEpisode(airdate: episode.airdate, id: episode.id, name: episode.name, number: episode.number, season: episode.season, runtime: episode.runtime, summary: episode.summary, mediumImageID: episode.mediumImageID, originalImageID: episode.originalImageID)
+ //    }
+ */
