@@ -52,7 +52,7 @@
                                             <outlet property="episodeImageView" destination="Apf-mb-ypd" id="2jy-qD-PTv"/>
                                             <outlet property="episodeNameLabel" destination="nz0-aF-fFC" id="acF-oP-YTm"/>
                                             <outlet property="seasonEpLabel" destination="JMc-qQ-nXa" id="alG-7i-dOL"/>
-                                            <segue destination="KeU-uG-zAB" kind="show" id="bSh-uR-6AE"/>
+                                            <segue destination="KeU-uG-zAB" kind="show" id="F4i-To-LyH"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="evenCell" rowHeight="100" id="cPX-zG-Ekk" customClass="EpisodeCell" customModule="GameOfThrones" customModuleProvider="target">
@@ -96,6 +96,7 @@
                                             <outlet property="episodeImageView" destination="UMn-oF-lHy" id="9l6-nQ-COH"/>
                                             <outlet property="episodeNameLabel" destination="zfP-uH-mo0" id="wOK-So-JQk"/>
                                             <outlet property="seasonEpLabel" destination="RSO-fe-Omj" id="2Jx-Q1-zAb"/>
+                                            <segue destination="KeU-uG-zAB" kind="show" id="lNR-nm-o88"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -113,21 +114,86 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="waT-qC-t1G">
             <objects>
-                <viewController id="KeU-uG-zAB" sceneMemberID="viewController">
+                <viewController id="KeU-uG-zAB" customClass="DetailViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D6X-Du-wwB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="avG-iy-S3n">
+                                <rect key="frame" x="20" y="602" width="374" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Paa-7x-gyO"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dtn-FH-vwb">
+                                <rect key="frame" x="20" y="140" width="374" height="252.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSB-gH-Yfq">
+                                <rect key="frame" x="20" y="432.5" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iK0-Wk-D3V">
+                                <rect key="frame" x="20" y="461.5" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh1-BC-nfH">
+                                <rect key="frame" x="20" y="490.5" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="airdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcZ-pT-hGj">
+                                <rect key="frame" x="20" y="519.5" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mSB-gH-Yfq" firstAttribute="leading" secondItem="SW5-Uw-6Co" secondAttribute="leading" constant="20" id="0va-SG-e6p"/>
+                            <constraint firstItem="mh1-BC-nfH" firstAttribute="leading" secondItem="SW5-Uw-6Co" secondAttribute="leading" constant="20" id="3KR-WT-syW"/>
+                            <constraint firstItem="xcZ-pT-hGj" firstAttribute="top" secondItem="mh1-BC-nfH" secondAttribute="bottom" constant="8" id="5bB-eU-3Xd"/>
+                            <constraint firstItem="iK0-Wk-D3V" firstAttribute="top" secondItem="mSB-gH-Yfq" secondAttribute="bottom" constant="8" id="7Jj-aW-FoY"/>
+                            <constraint firstItem="Dtn-FH-vwb" firstAttribute="top" secondItem="SW5-Uw-6Co" secondAttribute="top" id="CN5-jl-ATy"/>
+                            <constraint firstItem="Dtn-FH-vwb" firstAttribute="leading" secondItem="SW5-Uw-6Co" secondAttribute="leading" constant="20" id="PJG-Ld-7oJ"/>
+                            <constraint firstItem="xcZ-pT-hGj" firstAttribute="leading" secondItem="SW5-Uw-6Co" secondAttribute="leading" constant="20" id="UAY-0z-DHQ"/>
+                            <constraint firstItem="avG-iy-S3n" firstAttribute="leading" secondItem="SW5-Uw-6Co" secondAttribute="leading" constant="20" id="acx-Bi-PS0"/>
+                            <constraint firstItem="SW5-Uw-6Co" firstAttribute="trailing" secondItem="Dtn-FH-vwb" secondAttribute="trailing" constant="20" id="bY0-6u-Aro"/>
+                            <constraint firstItem="mh1-BC-nfH" firstAttribute="top" secondItem="iK0-Wk-D3V" secondAttribute="bottom" constant="8" id="k4g-ZA-90V"/>
+                            <constraint firstItem="SW5-Uw-6Co" firstAttribute="trailing" secondItem="avG-iy-S3n" secondAttribute="trailing" constant="20" id="pfb-uq-P9f"/>
+                            <constraint firstItem="Dtn-FH-vwb" firstAttribute="height" secondItem="SW5-Uw-6Co" secondAttribute="height" multiplier="0.35" id="plf-yL-IOb"/>
+                            <constraint firstItem="mSB-gH-Yfq" firstAttribute="top" secondItem="Dtn-FH-vwb" secondAttribute="bottom" constant="40" id="pwF-1D-OLb"/>
+                            <constraint firstItem="SW5-Uw-6Co" firstAttribute="bottom" secondItem="avG-iy-S3n" secondAttribute="bottom" constant="60" id="rt0-4z-wxA"/>
+                            <constraint firstItem="iK0-Wk-D3V" firstAttribute="leading" secondItem="SW5-Uw-6Co" secondAttribute="leading" constant="20" id="sAJ-ff-lyV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SW5-Uw-6Co"/>
                     </view>
                     <navigationItem key="navigationItem" id="xgs-He-dEu"/>
+                    <connections>
+                        <outlet property="airdateLabel" destination="xcZ-pT-hGj" id="No9-jB-4P4"/>
+                        <outlet property="episodeLabel" destination="iK0-Wk-D3V" id="cvc-Lu-MMO"/>
+                        <outlet property="imageView" destination="Dtn-FH-vwb" id="mMb-r1-kFB"/>
+                        <outlet property="runtimeLabel" destination="mh1-BC-nfH" id="SLS-3a-isg"/>
+                        <outlet property="seasonLabel" destination="mSB-gH-Yfq" id="tkE-bv-SE7"/>
+                        <outlet property="textView" destination="avG-iy-S3n" id="Ceg-nm-BOV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ksu-tM-bVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906" y="119"/>
+            <point key="canvasLocation" x="1905.7971014492755" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xoR-GS-isE">
@@ -148,4 +214,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lNR-nm-o88"/>
+    </inferredMetricsTieBreakers>
 </document>

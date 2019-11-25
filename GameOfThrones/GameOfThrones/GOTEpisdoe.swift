@@ -123,11 +123,3 @@ static func seasonSections() -> [[GOTEpisode]] {
     return sections
 }
 }
-
-/*
- let allEps = GOTEpisode.allEpisodes
- 
- //    for episode in allEps {
- //        let oneEp = GOTEpisode(airdate: episode.airdate, id: episode.id, name: episode.name, number: episode.number, season: episode.season, runtime: episode.runtime, summary: episode.summary, mediumImageID: episode.mediumImageID, originalImageID: episode.originalImageID)
- //    }
- */

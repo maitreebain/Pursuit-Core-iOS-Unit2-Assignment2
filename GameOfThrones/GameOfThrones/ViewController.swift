@@ -26,6 +26,18 @@ class ViewController: UIViewController {
     episode = GOTEpisode.seasonSections()
   }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("segue entered")
+        
+        guard let detailVC = segue.destination as? DetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("no segue found")
+        }
+        let episodeInfo = episode[indexPath.section][indexPath.row]
+        
+        detailVC.episode = episodeInfo
+        detailVC.navigationItem.title = episodeInfo.name
+    }
 
 }
 
@@ -63,7 +75,20 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return episode[section].first?.season.description
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return episode.count
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 140
     }
 }
