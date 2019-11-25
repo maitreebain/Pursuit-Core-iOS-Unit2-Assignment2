@@ -28,25 +28,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Apf-mb-ypd">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Apf-mb-ypd">
                                                     <rect key="frame" x="274" y="0.0" width="140" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Episode Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nz0-aF-fFC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Episode Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nz0-aF-fFC">
                                                     <rect key="frame" x="150" y="19" width="115" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="season/episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMc-qQ-nXa">
-                                                    <rect key="frame" x="144" y="40" width="121" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="season/episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMc-qQ-nXa">
+                                                    <rect key="frame" x="144" y="47.5" width="121" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nz0-aF-fFC" firstAttribute="top" secondItem="bXe-kr-GEl" secondAttribute="topMargin" constant="8" id="MhB-0a-RmK"/>
+                                                <constraint firstItem="JMc-qQ-nXa" firstAttribute="top" secondItem="nz0-aF-fFC" secondAttribute="bottom" constant="8" id="Rrw-6U-5m7"/>
+                                                <constraint firstAttribute="bottom" secondItem="Apf-mb-ypd" secondAttribute="bottom" id="TVU-CK-4yO"/>
+                                                <constraint firstItem="Apf-mb-ypd" firstAttribute="leading" secondItem="nz0-aF-fFC" secondAttribute="trailing" constant="8" id="jEd-vN-p8O"/>
+                                                <constraint firstAttribute="trailing" secondItem="Apf-mb-ypd" secondAttribute="trailing" id="jJp-8U-zjs"/>
+                                                <constraint firstItem="Apf-mb-ypd" firstAttribute="leading" secondItem="JMc-qQ-nXa" secondAttribute="trailing" constant="8" id="kTw-dL-QCW"/>
+                                                <constraint firstItem="Apf-mb-ypd" firstAttribute="top" secondItem="bXe-kr-GEl" secondAttribute="top" id="mca-sl-GkU"/>
+                                                <constraint firstItem="JMc-qQ-nXa" firstAttribute="top" secondItem="nz0-aF-fFC" secondAttribute="bottom" constant="8" id="yIv-dH-txz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="episodeImageView" destination="Apf-mb-ypd" id="2jy-qD-PTv"/>
